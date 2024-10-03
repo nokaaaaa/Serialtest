@@ -42,8 +42,8 @@ python
    PlatformIOを使って、`Serialtest`プロジェクトをNucleoボードにアップロードします。
 
 2. **Pythonファイルの変更**
-   - erialtest.pyの6行目を次のように変更
-python
+　　erialtest.pyの6行目を次のように変更
+　　```
    ser = serial.Serial('/dev/ttyACM0', 115200)
 
 3. **シリアポートの確認**
