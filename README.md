@@ -64,5 +64,17 @@
   （WAS）
    KERNEL=="tty[A-Z]*[0-9]|pppox[0-9]*|ircomm[0-9]*|noz[0-9]*|rfcomm[0-9]*", GROUP="dialout"
   （IS） 
-   KERNEL=="tty[A-Z]*[0-9]|pppox[0-9]*|ircomm[0-9]*|noz[0-9]*|rfcomm[0-9]*", GROUP="dialout", MODE="0666"　これを一つのREADME.mdとしてきれいにして
+   KERNEL=="tty[A-Z]*[0-9]|pppox[0-9]*|ircomm[0-9]*|noz[0-9]*|rfcomm[0-9]*", GROUP="dialout", MODE="0666"　
    ```
+   ここで、私の場合このファイルが読み取り専用ファイルになっていたので次のコマンドで編集していきます
+
+   ```bash
+   sudo chmod u+w /lib/udev/rules.d/50-udev-default.rules
+   sudo nano /lib/udev/rules.d/50-udev-default.rules
+   ```
+   これで十字キーを用いて該当場所まで移動して `, MODE="0666"`を追加します
+   ```bash
+   sudo chmod u-w /lib/udev/rules.d/50-udev-default.rules
+   sudo udevadm control --reload-rules
+   ```
+   これで一時的に読み取り解除していたものをもとに戻し,変更が反映されているはずです 以上ですお疲れ様でした
