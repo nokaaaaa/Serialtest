@@ -58,7 +58,7 @@
    sudo chmod 666 /dev/ttyACM0
 8. **永続的なシリアルポートの権限を付与**
 
-　　`/lib/udev/rules.d/50-udev-default.rules`　について次のように変更する
+　　`/lib/udev/rules.d/50-udev-default.rules`　について次のように変更する(こういうの変えてもいいのかな...なんかイヤホンが接続されなくなったけどきにしない
    
    ```
   （WAS）
