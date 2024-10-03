@@ -40,14 +40,14 @@
    PlatformIOを使って、SerialtestプロジェクトをNucleoボードにアップロードします。
 
 2. **Pythonファイルの変更**
-   - erialtest.pyの6行目を次のように変更
+     `erialtest.py`の6行目を次のように変更
    ```python
    ser = serial.Serial('/dev/ttyACM0', 115200)
 
 3. **シリアポートの確認**
    nucleoを接続してるときとしてないときで変わるやつが多分/dev/ttyACM0になってると思います。
    
-terminal
+   ```terminal
    ls /dev/tty*
 
 4. **一時的なシリアルポートの権限を付与**
