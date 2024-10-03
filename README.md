@@ -46,18 +46,18 @@
    ser = serial.Serial('/dev/ttyACM0', 115200)
 
 4. **シリアポートの確認**
-5. 
+ 
    nucleoを接続してるときとしてないときで変わるやつが多分/dev/ttyACM0になってると思います。
    
    ```terminal
    ls /dev/tty*
 6. **一時的なシリアルポートの権限を付与**
-7. 
+ 
    これで一時的に権限を付与できます。ただし接続時毎回やんなきゃだめです
    ```terminal
    sudo chmod 666 /dev/ttyACM0
 8. **永続的なシリアルポートの権限を付与**
-9. 
+
 　　`/lib/udev/rules.d/50-udev-default.rules`　について次のように変更する
    
    ```
