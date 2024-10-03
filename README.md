@@ -51,14 +51,14 @@
    ls /dev/tty*
 4. **一時的なシリアルポートの権限を付与**
    これで一時的に権限を付与できます。ただし接続時毎回やんなきゃだめです
-terminal
+   ```terminal
    sudo chmod 666 /dev/ttyACM0
-
-4. **永続的なシリアルポートの権限を付与**
-　　/lib/udev/rules.d/50-udev-default.rules　について次のように変更する
+5. **永続的なシリアルポートの権限を付与**
+　　`/lib/udev/rules.d/50-udev-default.rules`　について次のように変更する
    
-rules
+   ```rules
   （WAS）
    KERNEL=="tty[A-Z]*[0-9]|pppox[0-9]*|ircomm[0-9]*|noz[0-9]*|rfcomm[0-9]*", GROUP="dialout"
   （IS） 
    KERNEL=="tty[A-Z]*[0-9]|pppox[0-9]*|ircomm[0-9]*|noz[0-9]*|rfcomm[0-9]*", GROUP="dialout", MODE="0666"　これを一つのREADME.mdとしてきれいにして
+   ```
