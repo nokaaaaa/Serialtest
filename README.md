@@ -23,7 +23,7 @@
    PlatformIOを使って、`Serialtest`プロジェクトをNucleoボードにアップロードします。
 
 2. **COMポート番号の確認**  
-   - VSCodeの下部に表示されるシリアルポート情報、またはTera TermでCOMポート番号を確認します。
+    VSCodeの下部に表示されるシリアルポート情報、またはTera TermでCOMポート番号を確認します。
 
 3. **`serialtest.py`の実行**  
    Pythonスクリプト`serialtest.py`を実行し、COMポート番号を適切に設定します。
@@ -46,18 +46,21 @@
    ser = serial.Serial('/dev/ttyACM0', 115200)
 
 4. **シリアポートの確認**
+5. 
    nucleoを接続してるときとしてないときで変わるやつが多分/dev/ttyACM0になってると思います。
    
    ```terminal
    ls /dev/tty*
-5. **一時的なシリアルポートの権限を付与**
+6. **一時的なシリアルポートの権限を付与**
+7. 
    これで一時的に権限を付与できます。ただし接続時毎回やんなきゃだめです
    ```terminal
    sudo chmod 666 /dev/ttyACM0
-6. **永続的なシリアルポートの権限を付与**
+8. **永続的なシリアルポートの権限を付与**
+9. 
 　　`/lib/udev/rules.d/50-udev-default.rules`　について次のように変更する
    
-   ```rules
+   ```
   （WAS）
    KERNEL=="tty[A-Z]*[0-9]|pppox[0-9]*|ircomm[0-9]*|noz[0-9]*|rfcomm[0-9]*", GROUP="dialout"
   （IS） 
